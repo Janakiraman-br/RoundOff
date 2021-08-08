@@ -11,6 +11,7 @@ import reactor.core.publisher.Mono;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/roundoff")
 public class RoundOffController
 {
