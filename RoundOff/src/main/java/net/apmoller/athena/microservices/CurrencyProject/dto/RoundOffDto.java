@@ -13,7 +13,7 @@ public class RoundOffDto
     private String roundingOffPoint;
     private int roundOffValue;
     private String createdBy;
-    private Date createdDate;
+    private String createdDate;
 
 }
 

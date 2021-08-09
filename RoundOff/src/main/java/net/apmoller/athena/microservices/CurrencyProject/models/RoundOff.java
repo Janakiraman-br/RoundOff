@@ -17,8 +17,7 @@ public class RoundOff
     private String roundingOffPoint;
     private int roundOffValue;
     private String createdBy;
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-    private Date createdDate;
+    private String createdDate;
 
 
 }
