@@ -34,7 +34,9 @@ public class RoundOffService
 
     public Mono<RoundOffDto> getDataByRoundOffRule(String id) throws RoundOffException
     {
-        return roundOffRepository.findById(id).map(AppUtils::roundOffEntityToDto).switchIfEmpty(Mono.defer(()->Mono.error(new RoundOffException("Invalid ID Found"))));
+        return roundOffRepository
+                .findById(id)
+                .map(AppUtils::roundOffEntityToDto).switchIfEmpty(Mono.defer(()->Mono.error(new RoundOffException("Invalid ID Found"))));
     }
 
     public Mono<List<String>> getAllRoundOffCode()
