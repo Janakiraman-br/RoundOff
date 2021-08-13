@@ -18,40 +18,27 @@ public class RoundOffController
 {
     @Autowired
     private RoundOffService roundOffService;
+    @PostMapping                                                    //INSERT ROUND OFF DATA
+    public Mono<RoundOffDto> saveRoundData(@RequestBody Mono<RoundOffDto> roundOffDtoMono)  {
+        return roundOffService.saveRoundOffData(roundOffDtoMono);
+    }
 
-    //GET ALL ROUND OFF DATAS
-    @GetMapping
+    @GetMapping                                                     //GET ALL ROUND OFF DATAS
     public Flux<RoundOffDto> getAllRoundDatas()
     {
         return roundOffService.getAllRoundOffDatas();
     }
 
-    //INSERT ROUND OFF DATA
-    @PostMapping
-    public Mono<RoundOffDto> saveRoundData(@RequestBody Mono<RoundOffDto> roundOffDtoMono)  {
-        return roundOffService.saveRoundOffData(roundOffDtoMono);
-    }
-
-    //GET DATA BY ROUNDOFFRULE
-    @GetMapping("/{id}")
+    @GetMapping("/{id}")                                             //GET DATA BY ROUNDOFFRULE
     public Mono<RoundOffDto> getDataByRoundOffRule(@PathVariable String id) throws RoundOffException {
         Mono<RoundOffDto> getDataByRoundOffRule = roundOffService.getDataByRoundOffRule(id) ;
         return getDataByRoundOffRule;
     }
 
-
-    @GetMapping("/allcodes")
+    @GetMapping("/allcodes")                                         //GET ALL ROUND OFF CODES
     public Mono<List<String>> getAllCodes()
     {
         return roundOffService.getAllRoundOffCode();
     }
-
-    //UPDATE ROUND OFF DATA BY ID
-//    @PutMapping("/update/{id}")
-//    public Mono<RoundOffDto> updateRoundData(@RequestBody Mono<RoundOffDto> roundOffDtoMono, @PathVariable String id)
-//    {
-//        return roundOffService.updateRoundOffData(roundOffDtoMono,id);
-//    }
-
 
 }
