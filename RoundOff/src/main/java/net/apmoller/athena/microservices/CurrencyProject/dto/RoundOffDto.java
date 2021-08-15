@@ -8,7 +8,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class RoundOffDto
+public class    RoundOffDto
 {
     private String roundingOffPoint;
     private int roundOffValue;
