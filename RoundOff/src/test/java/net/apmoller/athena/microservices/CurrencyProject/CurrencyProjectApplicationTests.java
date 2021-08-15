@@ -58,7 +58,7 @@ class CurrencyProjectApplicationTests {
 
 	}
 	@Test
-	public void getProductTest() throws RoundOffException {
+	public void getById() throws RoundOffException {
 		Mono<RoundOffDto> productDtoMono=Mono.just(new RoundOffDto("1",2,"JKR",null));
 		when(service.getDataByRoundOffRule(any())).thenReturn(productDtoMono);
 

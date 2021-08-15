@@ -36,9 +36,11 @@ public class RoundOffController
     }
 
     @GetMapping("/allcodes")                                         //GET ALL ROUND OFF CODES
-    public Mono<List<String>> getAllCodes()
+    public Mono<List<Integer>> getAllCodes()
     {
         return roundOffService.getAllRoundOffCode();
     }
+
+
 
 }

@@ -39,12 +39,12 @@ public class RoundOffService
                 .map(AppUtils::roundOffEntityToDto).switchIfEmpty(Mono.defer(()->Mono.error(new RoundOffException("Invalid ID Found"))));
     }
 
-    public Mono<List<String>> getAllRoundOffCode()
+    public Mono<List<Integer>> getAllRoundOffCode()
     {
         return roundOffRepository
                 .findAll()
                 .map(AppUtils::roundOffEntityToDto)
-                .map(e->e.getRoundingOffPoint())
+                .map(e->e.getRoundOffValue())
                 .collect(Collectors.toList());
     }
 
